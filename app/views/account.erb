@@ -2,4 +2,17 @@
 
 <p>We are currently working on your account.</p>
 
+<p>Your balance is currently: <%= @user.balance %></p>
+<form action="/deposit" method="post">
+    <label for="deposit">Please enter the amount you would like to deposit:</label>
+    <input type="number" name="deposit" id="deposit" min="0">
+    <input type="submit" value="Deposit">
+</form>
+<br>
+<form action="/withdraw" method="post">
+    <label for="withdraw">Please enter the amount you would like to withdraw:</label>
+    <input type="number" name="withdraw" id="withdraw" min="0" max=<% @user.balance %>>
+    <input type="submit" value="Withdraw">
+</form>
+<br>
 <p><a href="/logout">Log Out</a></p>
