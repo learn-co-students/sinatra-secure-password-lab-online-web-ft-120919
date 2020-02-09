@@ -1,5 +1,14 @@
 <h1>Welcome</h1>
-
+<% if @error %>
+<h2><%= @error %></h2>
+<% end %>
 <p>We are currently working on your account.</p>
-
+<p>But in the meantime, try our deposit and withdrawal features!</p>
+<p>Balance: <%= current_user.balance %></p>
+<form action="/transaction" method="post">
+  <p><input type="radio" name="transaction" value="deposit"> Deposit</p>
+  <p><input type="radio" name="transaction" value="withdrawal"> Withdraw</p>
+  <p>Amount: <input type="number" name="amount" id="amount"></p>
+  <input type="submit" value="Submit">
+</form>
 <p><a href="/logout">Log Out</a></p>
