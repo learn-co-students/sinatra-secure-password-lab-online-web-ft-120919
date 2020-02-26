@@ -9,7 +9,7 @@ describe 'App' do
       expect(last_response.status).to eq(200)
     end
   end
-
+ 
   describe "Signing Up" do
 
     it "displays Sign Up Page" do
